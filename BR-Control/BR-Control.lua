@@ -22,6 +22,7 @@ local mins = 0
 
 term.clear()
 term.setCursorBlink(false)
+gpu.setResolution(50, 16)
 
 
 -------------------------------------------------------------------------------
@@ -41,12 +42,12 @@ local function gotoXY(row, col)
 end
 
 local function printXY(row, col, s)
-  gotoXY(col, row)
+  gotoXY(row, col)
   print(s)
 end
 
 local function printFXY(row, col, s, ...)
-  gotoXY(col, row)
+  gotoXY(row, col)
   print(s:format(...))
 end
 
@@ -169,5 +170,6 @@ while running do
   end
 end
 
+gpu.setResolution(gpu.maxResolution())
 term.clear()
 term.setCursorBlink(false)
