@@ -36,6 +36,10 @@ function getKey()
   return (select(4, event.pull("key_down")))
 end
 
+local function gotoXY(row, col)
+  term.setCursor(col, row)
+end
+
 local function printXY(row, col, s)
   gotoXY(col, row)
   print(s)
@@ -44,10 +48,6 @@ end
 local function printFXY(row, col, s, ...)
   gotoXY(col, row)
   print(s:format(...))
-end
-
-local function gotoXY(row, col)
-  term.setCursor(col, row)
 end
 
 local function center(row, msg)
@@ -169,9 +169,7 @@ while running do
   display()
   br.setAllControlRodLevels(currentEnergyPercent)
   br.setActive(reactorActive)
-
-  term.clearLine()
-  print() 
+ 
   local event, address, arg1, arg2, arg3 = event.pull(1)
   if type(address) == "string" and component.isPrimary(address) then
     if event == "key_down" then
