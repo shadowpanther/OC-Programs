@@ -103,15 +103,6 @@ local function onKeyDown(key)
 end
 
 
-function ft ()
-  local d = os.day()
-  local t = os.time()
-  local h = math.floor(t)
-  local m = math.floor((t-h)*60)
-  return string.format("Day %d, %02d:%02d",d,h,m)
-end
-
-
 function log (msg)
   local stamp=ft()
   print (stamp..": "..msg)
@@ -145,7 +136,7 @@ end
 function display()
   term.clear()
   printXY(1, 1, "Reactor Status")
-  printXY(2, 1, ft())
+  printXY(2, 1, os.date())
   local funcs={"Connected","Active","NumberOfControlRods","EnergyStored","EnergyPercent","CasingTemperature","FuelTemperature","FuelAmount","WasteAmount","FuelAmountMax","EnergyProducedLastTick","FuelConsumedLastTick"}
   local units={"","","","RF","%","C","C","mB","mB","mB","RF/t","mB/t"}
   local values={}
