@@ -149,7 +149,7 @@ function display()
   gotoXY(4, 1)
   for i,v in pairs(funcs) do
     print(rjust(v,funcW)..": "..rjust(values[i],valW).." "..units[i])
-  end  
+  end
 end
 
 
@@ -161,7 +161,7 @@ while running do
   display()
   br.setAllControlRodLevels(currentEnergyPercent)
   br.setActive(reactorActive)
- 
+
   local event, address, arg1, arg2, arg3 = event.pull(1)
   if type(address) == "string" and component.isPrimary(address) then
     if event == "key_down" then
