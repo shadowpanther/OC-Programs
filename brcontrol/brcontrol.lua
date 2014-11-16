@@ -11,7 +11,7 @@ local colors=require("colors")
 
 local gpu = component.gpu
 local br = component.br_reactor
-local rs = component.redstone
+-- local rs = component.redstone
 
 local maxTemp = 5500
 local maxEnergy = 10000000
