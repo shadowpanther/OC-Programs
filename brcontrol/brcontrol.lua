@@ -144,7 +144,7 @@ function display()
   for _,v in pairs(funcs) do
     local t = br["get"..v]()
     if type(t) == "number" then
-      values[#values+1] = string.format("%.6g", t)
+      values[#values+1] = string.format("%.8g", t)
     else
       values[#values+1] = tostring(t)
     end
