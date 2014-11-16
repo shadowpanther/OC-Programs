@@ -142,7 +142,7 @@ function display()
   local units={"","","","RF","%","C","C","mB","mB","mB","RF/t","mB/t"}
   local values={}
   for _,v in pairs(funcs) do
-    values[#values+1] = tostring(br["get"..v]())
+    values[#values+1] = string.format("%.6g", br["get"..v]())
   end
   local funcW=tableWidth(funcs)
   local valW=tableWidth(values)
