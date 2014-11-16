@@ -135,7 +135,7 @@ end
 
 
 function display()
-  term.clear()
+  -- term.clear()
   printXY(1, 1, "Reactor Status")
   printXY(2, 1, os.date())
   local funcs={"Connected","Active","NumberOfControlRods","EnergyStored","EnergyPercent","CasingTemperature","FuelTemperature","FuelAmount","WasteAmount","FuelAmountMax","EnergyProducedLastTick","FuelConsumedLastTick"}
