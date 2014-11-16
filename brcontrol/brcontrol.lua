@@ -151,7 +151,9 @@ function display()
   end
   local funcW=tableWidth(funcs)
   local valW=tableWidth(values)
-  if valW < 14 then valW = 14
+  if valW < 14 then
+    valW = 14
+  end
   gotoXY(4, 1)
   for i,v in pairs(funcs) do
     print(rjust(v,funcW)..": "..rjust(values[i],valW).." "..units[i].."  ")
